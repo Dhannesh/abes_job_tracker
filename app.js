@@ -29,7 +29,7 @@ const limiter = rateLimit({
 });
 const app = express();
 // console.log(path.resolve(path.dirname("."), "client", "build"));
-app.use(express.static(path.resolve(path.dirname("."), "client", "build")));
+app.use(express.static(path.resolve(path.dirname("."), "client", "dist")));
 // app.use(limiter);
 app.use(express.json());
 app.use(helmet());
