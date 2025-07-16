@@ -31,6 +31,9 @@ const app = express();
 // console.log(path.resolve(path.dirname("."), "client", "build"));
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+console.log("__filename", __filename);
+console.log("__dirname", __dirname);
+
 app.use(express.static(path.join(__dirname, "client", "dist")));
 // app.use(express.static(path.resolve(path.dirname("."), "client", "dist")));
 // app.use(limiter); // i have changed the app.js accorid to vite
