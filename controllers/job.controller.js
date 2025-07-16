@@ -1,7 +1,7 @@
-import JobModel from "../model/Job.model.mjs";
+import JobModel from "../model/Job.model.js";
 import { StatusCodes } from "http-status-codes";
-import NotFoundError from "../errors/notFound.error.mjs";
-import BadRequestError from "../errors/badRequest.error.mjs";
+import NotFoundError from "../errors/notFound.error.js";
+import BadRequestError from "../errors/badRequest.error.js";
 import mongoose from "mongoose";
 import moment from "moment";
 

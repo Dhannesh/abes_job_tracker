@@ -9,15 +9,15 @@ import { rateLimit } from "express-rate-limit";
 import path from "path";
 
 // middleware
-import authMiddleware from "./middleware/auth.middleware.mjs";
+import authMiddleware from "./middleware/auth.middleware.js";
 
 // Routes
-import authRouter from "./routes/authRouter.mjs";
-import jobsRouter from "./routes/jobsRouter.mjs";
+import authRouter from "./routes/authRouter.js";
+import jobsRouter from "./routes/jobsRouter.js";
 
 // error handler
-import notFoundMiddleware from "./middleware/notFound.middleware.mjs";
-import errorHandlerMiddleware from "./middleware/errorHandler.middleware.mjs";
+import notFoundMiddleware from "./middleware/notFound.middleware.js";
+import errorHandlerMiddleware from "./middleware/errorHandler.middleware.js";
 dotenv.config();
 
 const limiter = rateLimit({

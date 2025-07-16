@@ -6,8 +6,8 @@ import {
   getJob,
   updateJob,
   showStats,
-} from "../controllers/job.controller.mjs";
-import testUserMiddleware from "../middleware/testUser.middleware.mjs";
+} from "../controllers/job.controller.js";
+import testUserMiddleware from "../middleware/testUser.middleware.js";
 const jobsRouter = Router();
 
 jobsRouter.route("/").post(createJob).get(getAllJobs);

@@ -1,11 +1,11 @@
 import { Router } from "express";
-import authMiddleware from "../middleware/auth.middleware.mjs";
+import authMiddleware from "../middleware/auth.middleware.js";
 import {
   login,
   register,
   updateUser,
-} from "../controllers/auth.controller.mjs";
-import testUserMiddleware from "../middleware/testUser.middleware.mjs";
+} from "../controllers/auth.controller.js";
+import testUserMiddleware from "../middleware/testUser.middleware.js";
 import rateLimit from "express-rate-limit";
 
 const apiLimiter = rateLimit({

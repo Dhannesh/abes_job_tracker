@@ -1,6 +1,6 @@
-import UserModel from "../model/User.model.mjs";
+import UserModel from "../model/User.model.js";
 import jwt from "jsonwebtoken";
-import UnauthenticatedError from "../errors/unauthenticated.error.mjs";
+import UnauthenticatedError from "../errors/unauthenticated.error.js";
 
 const authMiddleware = async (req, res, next) => {
   // check header

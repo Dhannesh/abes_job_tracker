@@ -1,7 +1,7 @@
-import UserModel from "../model/User.model.mjs";
+import UserModel from "../model/User.model.js";
 import { StatusCodes } from "http-status-codes";
-import BadRequestError from "../errors/badRequest.error.mjs";
-import UnauthenticatedError from "../errors/unauthenticated.error.mjs";
+import BadRequestError from "../errors/badRequest.error.js";
+import UnauthenticatedError from "../errors/unauthenticated.error.js";
 
 export const register = async (req, res) => {
   const user = await UserModel.create({ ...req.body });

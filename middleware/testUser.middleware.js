@@ -1,4 +1,4 @@
-import BadRequestError from "../errors/badRequest.error.mjs";
+import BadRequestError from "../errors/badRequest.error.js";
 
 const testUserMiddleware = (req, res, next) => {
   if (req.user.testUser) {
