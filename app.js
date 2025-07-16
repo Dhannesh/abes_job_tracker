@@ -30,7 +30,7 @@ const limiter = rateLimit({
 const app = express();
 // console.log(path.resolve(path.dirname("."), "client", "build"));
 app.use(express.static(path.resolve(path.dirname("."), "client", "dist")));
-// app.use(limiter);
+// app.use(limiter); // i have changed the app.js accorid to vite
 app.use(express.json());
 app.use(helmet());
 app.use(cors());
