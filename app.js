@@ -7,7 +7,7 @@ import helmet from "helmet";
 import cors from "cors";
 import { rateLimit } from "express-rate-limit";
 import path from "path";
-
+import { fileURLToPath } from "url";
 // middleware
 import authMiddleware from "./middleware/auth.middleware.js";
 
@@ -29,7 +29,10 @@ const limiter = rateLimit({
 });
 const app = express();
 // console.log(path.resolve(path.dirname("."), "client", "build"));
-app.use(express.static(path.resolve(path.dirname("."), "client", "dist")));
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+app.use(express.static(path.join(__dirname, "client", "dist")));
+// app.use(express.static(path.resolve(path.dirname("."), "client", "dist")));
 // app.use(limiter); // i have changed the app.js accorid to vite
 app.use(express.json());
 app.use(helmet());
@@ -42,10 +45,9 @@ app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", authMiddleware, jobsRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(
-    path.resolve(path.dirname("."), "client", "build", "index.html")
-  );
+  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
+
 app.use(notFoundMiddleware);
 app.use(errorHandlerMiddleware);
 
